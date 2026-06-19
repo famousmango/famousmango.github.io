@@ -726,7 +726,7 @@ footer{background:#0c2e1f;color:rgba(255,255,255,.7);padding:clamp(48px,6vw,72px
             </div>
             <div class="fgrp">
               <label for="fqty">পরিমাণ (কেজি) ★</label>
-              <input type="number" id="fqty" placeholder="সর্বনিম্ন ১০ কেজি" min="10">
+              <input type="number" id="fqty" placeholder="সর্বনিম্ন 10 কেজি" min="10">
             </div>
           </div>
           <div class="fgrp full">
@@ -1103,10 +1103,10 @@ $('orderForm').addEventListener('submit',async function(e){
   const phoneRegex=/^(?:\+?88)?01[3-9]\d{8}$/;
   if(!phoneRegex.test(phoneClean)){toast('⚠️ সঠিক বাংলাদেশি মোবাইল নম্বর দিন (যেমন: ০১৭XXXXXXXX)');return;}
   // সর্বনিম্ন ১০ কেজি চেক
-  if(+qty<10){toast('⚠️ সর্বনিম্ন ১০ কেজি অর্ডার করতে হবে');return;}
+  if(+qty<10){toast('⚠️ সর্বনিম্ন 10 কেজি অর্ডার করতে হবে');return;}
   // কার্টে থাকলে সেটাও চেক
   const {kgTotal}=totals();
-  if(cart.length>0 && kgTotal<10){toast('⚠️ কার্টে সর্বমোট ১০ কেজির কম আম রয়েছে। আরও যোগ করুন।');return;}
+  if(cart.length>0 && kgTotal<10){toast('⚠️ কার্টে সর্বমোট 10 কেজির কম আম রয়েছে। আরও যোগ করুন।');return;}
   const submitBtn=this.querySelector('[type=submit]');
   submitBtn.disabled=true;submitBtn.textContent='পাঠানো হচ্ছে…';
   // cart summary for email
