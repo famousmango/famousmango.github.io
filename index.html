@@ -749,7 +749,7 @@ footer{background:#0c2e1f;color:rgba(255,255,255,.7);padding:clamp(48px,6vw,72px
       <div class="dev-credit-inner">
         <span class="dev-credit-tag">⚡ Developed &amp; Designed by</span>
         
-        <a style="font-size:18px" href="https://foysal1627.github.io" target="_blank">Foysal Mahmud</a>
+        <a style="font-size:22px; font-family: courier" href="https://foysal1627.github.io" target="_blank">Foysal Mahmud</a>
     </div>
   
     <div class="foot-bottom">
@@ -904,7 +904,7 @@ grid.addEventListener('click',e=>{
   if(wish){
     wish.classList.toggle('on');
     wish.textContent=wish.classList.contains('on')?'♥':'♡';
-    toast(wish.classList.contains('on')?'💖 পছন্দে যোগ হয়েছে':'পছন্ন থেকে সরানো হয়েছে');
+    toast(wish.classList.contains('on')?'<i class="fa-solid fa-heart-circle-check"></i> পছন্দে যোগ হয়েছে':'পছন্ন থেকে সরানো হয়েছে');
     return;
   }
   const w=e.target.closest('.w-pill');
@@ -918,7 +918,7 @@ grid.addEventListener('click',e=>{
   }
   const add=e.target.closest('.add-btn');
   if(add){ addToCart(+add.dataset.id, cardState[+add.dataset.id]||1); return; }
-  // ছবিতে ট্যাপ → QV (tag বাদে)
+  
   const media=e.target.closest('.p-media');
   if(media && !e.target.closest('.p-tag')){ openQV(+media.closest('.pcard').dataset.id); }
 });
